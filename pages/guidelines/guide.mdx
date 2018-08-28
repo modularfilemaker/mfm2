@@ -1,0 +1,41 @@
+# Guidelines for Modular Design In Filemaker
+
+## Introduction
+
+This is an update to the original ModularFileMaker guidlines. Much has changed since 2013, and this document attempts to incorporate these changes into the Guidelines.
+One of things we noticed using this over the last five yearsv is that the Guidlines can be less strict and still useful. So we'll attempt to throw out more opinion and 
+focus on what is truly useful. We'll also add recomendations for documentation style becuase it helps tooling, which we'll see is becoming more and more important.
+
+### Important Changes To The Platform
+
+Native JSON support ends the Custom Function parameter passing wars.  Window support is much better. Card Windows by themselves would be a big win, but just being aable to place windows 
+expactly where you want them is a big help.
+
+## New Ideas
+
+### Module Types
+It is worth thinking about modules as coming in different types. This makes tooling and organization easier.
+
+#### Simple Types
+Simple types are simple because they only have one "thing". Custom Functions Libraries are a good example.  
+Having one bucket that can be inserted or updated in a single shot is the primary characteristic
+Here are some more simple types
+* Custom Functions
+* Scripts
+* Plugins
+* File
+
+#### Complex Types
+Complex types will have layouts, scripts, cfs, etc. If you can we suggest breaking them out into their own Module. But this is not always possible.
+
+#### File Modules
+Now that window placement is so much better, and Card Windows that can be used from other files, packaging up a module as an entire file is realy quite effective.
+If your module can be abstracted a way from schema, and can accept and respond with JSON then a File is the best way to deploy that module. 
+
+### Parameter passing
+Use JSON! Anything else is legacy or questionable.
+
+### Script Folders
+Scripts remain one of the best ways to organize the modules in your Solution. We advice a structure like this
+[image]
+
