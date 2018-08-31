@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-
+import React from "react";
+import PropTypes from "prop-types";
 import {
   Card,
   CardHeader,
-  CardDeck,
-  CardImg,
   CardBody,
   CardTitle,
   CardSubtitle,
@@ -15,64 +13,65 @@ import {
 } from "reactstrap";
 import VSpace from "../VSpace";
 
-class Module extends Component {
-  render() {
-    const {
-      Type,
-      Name,
-      Author,
-      Description,
-      LastUpdate,
-      DownloadCounter,
-      Short,
-      HasXML,
-      CurrentVersionId
-    } = this.props;
-    return (
-      <div className="animated fadeIn">
-        <Card>
-          <CardHeader>
-            {Type}
-            <div className="float-right">
-              Downloads{" "}
-              <Badge pill color={"success"} style={{ padding: "2px" }}>
-                {DownloadCounter}
-              </Badge>
-            </div>
-          </CardHeader>
-          {/*<CardImg
-            top
-            width="100%"
-            src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
-            alt="Card image cap"
-          />*/}
-          <CardBody>
-            <CardTitle>{Name}</CardTitle>
+const Module = ({
+  type,
+  name,
+  author,
+  description,
+  lastUpdate,
+  downloadCounter,
+  short,
+  hasXML,
+  currentVersionId
+}) => (
+  <div className="animated fadeIn">
+    <Card>
+      <CardHeader>
+        {type}
+        <div className="float-right">
+          Downloads{" "}
+          <Badge pill color={"success"} style={{ padding: "2px" }}>
+            {downloadCounter}
+          </Badge>
+        </div>
+      </CardHeader>
+      <CardBody>
+        <CardTitle>{name}</CardTitle>
 
-            <CardSubtitle>{Short}</CardSubtitle>
-            <VSpace px={10} />
-            <CardText>{Description}</CardText>
+        <CardSubtitle>{short}</CardSubtitle>
+        <VSpace px={10} />
+        <CardText>{description}</CardText>
 
-            <CardText>Author: {Author}</CardText>
+        <CardText>Author: {author}</CardText>
 
-            {HasXML ? (
-              <Button
-                href={
-                  "fmp://$/mfm.fmp12?script=MFM LoadXML&$ID=" + CurrentVersionId
-                }
-                color="primary"
-              >
-                <i className="fa fa-copy" /> XML
-              </Button>
-            ) : (
-              ""
-            )}
-          </CardBody>
-          <CardFooter>Last Updated: {LastUpdate}</CardFooter>
-        </Card>
-      </div>
-    );
-  }
-}
+        {hasXML ? (
+          <Button
+            href={
+              "fmp://$/mfm.fmp12?script=MFM LoadXML&$ID=" + currentVersionId
+            }
+            color="primary"
+          >
+            <i className="fa fa-copy" /> XML
+          </Button>
+        ) : (
+          ""
+        )}
+      </CardBody>
+      <CardFooter>Last Updated: {lastUpdate}</CardFooter>
+    </Card>
+  </div>
+);
+
+Module.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+  author: PropTypes.string,
+  description: PropTypes.string,
+  lastUpdate: PropTypes.string,
+  downloadCounter: PropTypes.string,
+  short: PropTypes.string,
+  hasXML: PropTypes.string,
+  currentVersionId: PropTypes.string
+};
 
 export default Module;
