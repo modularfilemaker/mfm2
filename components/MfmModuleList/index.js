@@ -2,18 +2,7 @@ import React, { Component } from "react";
 import { getModules } from "../../api";
 import Module from "./Module";
 import VSpace from "../VSpace";
-import {
-  Card,
-  CardDeck,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Button,
-  CardColumns,
-  Container
-} from "reactstrap";
+import { CardColumns, Container } from "reactstrap";
 
 class MfmModuleList extends Component {
   constructor(props) {
@@ -37,7 +26,7 @@ class MfmModuleList extends Component {
     let { filter } = this.props;
     filter = filter.toLowerCase();
     let data = this.state.modules.filter(module => {
-      let { Name, Description, Type, Author, Short } = module;
+      let { Name, Description, Type, Author } = module;
       Name = Name.toLowerCase() || "";
       Description = Description.toLowerCase() || "";
       Type = Type.toLowerCase() || "";
