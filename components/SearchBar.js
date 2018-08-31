@@ -13,11 +13,11 @@ const SearchBar = ({ filter, onChange }) => (
               type="search"
               placeholder="Search Components"
               aria-label="Search"
-              value={this.props.filter}
-              onChange={this.props.onChange}
+              value={filter}
+              onChange={onChange}
             />
 
-            <HSpace px="10" />
+            <HSpace px={10} />
             <Button color="success" outline>
               Search
             </Button>
@@ -29,7 +29,7 @@ const SearchBar = ({ filter, onChange }) => (
 );
 
 SearchBar.propTypes = {
-  onChange: PropTypes.function,
+  onChange: PropTypes.func,
   filter: PropTypes.string
 };
 
