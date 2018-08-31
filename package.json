@@ -1,6 +1,6 @@
 {
   "name": "mfm2",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Modular FileMaker 2.0 Website",
   "main": "index.js",
   "dependencies": {
@@ -24,20 +24,27 @@
   },
   "scripts": {
     "dev": "next -p 3060",
+    "test": "./node_modules/eslint/bin/eslint.js . --ext .js",
     "build": "next build",
     "start": "next start"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/geistinteractive/mfm2.git"
+    "url": "git+https://github.com/modularfilemaker/mfm2.git"
   },
   "author": "todd@geistinteractive.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/geistinteractive/mfm2/issues"
+    "url": "https://github.com/modularfilemaker/mfm2/issues"
   },
-  "homepage": "https://github.com/geistinteractive/mfm2#readme",
+  "homepage": "https://github.com/modularfilemaker/mfm2#readme",
   "devDependencies": {
-    "node-sass-chokidar": "^1.3.3"
+    "node-sass-chokidar": "^1.3.3",
+    "babel-eslint": "^8.2.5",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-react": "^7.7.0",
+    "prettier": "^1.8.2"
   }
 }
