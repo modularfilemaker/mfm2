@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['prettier', 'react'],
   extends: ['google', 'eslint:recommended', 'plugin:react/recommended'],
   rules: {
+    'no-console': 1,
     'prettier/prettier': 'error'
   }
 };
