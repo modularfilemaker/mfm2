@@ -1,5 +1,5 @@
+import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
-import { Container } from "reactstrap";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
             integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
         </Head>
         <body>
